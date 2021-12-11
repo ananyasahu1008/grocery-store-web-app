@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> GSMS </title>
+        <meta charset="utf-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="csrf-token" content="kmapods5wQ5L1hn7rcR9OPst7EsN0gC7SrHh3m9K"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,700">
+        <link media="all" type="text/css" rel="stylesheet" href="/css/style.css?v=1.0">
+        <link media="all" type="text/css" rel="stylesheet" href="/css/sidebar-menu.css?v=1.0">
+        <link media="all" type="text/css" rel="stylesheet" href="/css/custom.css?v=1.3.3">
+    </head>
+    <body class="tooltips">
+        <div class="container">
+
+            <div class="header content rows-content-header">
+                <button class="button-menu-mobile show-sidebar">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav visible-lg visible-md limit-chars">
+                                <ul class="breadcrumb">
+                                    <a href="/">
+                                        <i class="zmdi zmdi-view-dashboard zmdi-hc-fw" title="Orders"></i>
+                                    </a>
+                                    <a href="/getAllProducts">
+                                        <i class="zmdi zmdi-assignment zmdi-hc-fw" title="Products"></i>
+                                    </a>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right content-page">
+                <div class="body content rows scroll-y">
+                    <div class="form-horizontal">
+                        <div class="box-info full" id="taskFormContainer">
+                            <hr />
+                            <ul>
+                                <li>Delete order no.{{d.0}}</li>
+                            </ul>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                      
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Are you sure you want to delete <strong>order no.{{d.0}}</strong>?</p>
+                              <form method="POST" action="/removeOrder">
+                                <input type=text name="order_id" value="{{d.0}}" hidden readonly/>
+                                <button class="btn-danger" type="submit">Delete</button>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                      
+                        </div>
+                      </div>
+                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </body>
+    
+</html>
